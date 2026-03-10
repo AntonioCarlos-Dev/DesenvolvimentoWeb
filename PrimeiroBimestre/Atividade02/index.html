@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro - RedFrontier</title>
+</head>
+<body>
+    <video autoplay muted loop id="video-fundo">
+        <source src="video/marte.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <h1>Cadastro RedFrontier</h1>
+    <form action="/api/cientistas/cadastro" method="POST">
+        <fieldset>
+            <legend>Crie sua conta</legend>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="seu.email@dominio.com" required><br><br>
+
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password" maxlength="12" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12})"
+         title="Deve conter no mínimo 8 e no máximo 12 caracteres, com letra maiúscula, minúscula e número." required><br><br>
+
+        <b>Gênero</b><br>
+        <input type="radio" id="masculino" name="genero" value="masculino" required>
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="feminino" name="genero" value="feminino">
+        <label for="feminino">Feminino</label><br>
+        <input type="radio" id="outro" name="genero" value="outro">
+        <label for="outro">Outro</label><br><br>
+
+        <label for="biografia">Biografia:</label><br>
+        <textarea id="biografia" name="biografia" rows="6" cols="50" placeholder="Escreva uma breve biografia..." required></textarea><br><br>
+
+        <input type="checkbox" id="termos" name="termos" required>
+        <label for="termos">Eu concordo com os termos e condições</label><br><br>
+
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Limpar">
+
+        </fieldset>
+
+    </form>
+</body>
+</html>
