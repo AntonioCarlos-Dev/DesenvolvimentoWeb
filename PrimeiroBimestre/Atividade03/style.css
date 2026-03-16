@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+}
+
+header {
+    background-color: #000000;
+    padding: 20px 40px;
+    border-bottom: 1px solid #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff; 
+}
+
+.container-layout {
+    display: flex;
+    max-width: 1200px; 
+    margin: 50px auto; 
+    gap: 40px; 
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    background-color: #111111;
+    padding: 30px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+}
+
+article {
+    background-color: #111111;
+    padding: 40px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+}
+
+article h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+article time {
+    color: #888888;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 30px;
+}
+
+article p {
+    color: #d1d1d1;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+figure {
+    margin: 40px 0;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777777;
+    text-align: right;
+    font-style: italic;
+}
+
+aside h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 12px;
+}
+
+aside a {
+    color: #d35400;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+aside a:hover {
+    color: #ff6f00;
+}
+
+footer {
+    background-color: #000000;
+    color: #777777;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+}
