@@ -1,0 +1,171 @@
+/* Remove as margens invisíveis do navegador e arruma a matemática do tamanho das caixas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pinta o fundo de escuro, define a cor do texto e a fonte de todo o site */
+body {
+    background-color: #0d0d0d;
+    color: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+}
+
+/* No celular, empilha o site inteiro em apenas 1 coluna de cima para baixo */
+.grid-container {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-areas: 
+        "cabecalho"
+        "conteudo"
+        "lateral"
+        "rodape";
+}
+
+header {
+    grid-area: cabecalho;
+    background-color: #000000;
+    padding: 20px 40px;
+    border-bottom: 1px solid #333;
+}
+
+/* Usa Flexbox para colocar os links do menu centralizados e um ao lado do outro */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+/* Estilo do texto dos links do menu */
+nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* Quando o mouse passa em cima, o link do menu fica branco */
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Avisa para o Grid que o elemento <main> é a área chamada de "conteudo" */
+main {
+    grid-area: conteudo;
+}
+
+/* A caixa da barra lateral */
+aside {
+    grid-area: lateral;
+    background-color: #111111;
+    padding: 30px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+aside h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Tira as bolinhas padrão da lista de links da barra lateral */
+aside ul {
+    list-style: none;
+}
+
+/* Dá um espaço entre um link e outro na barra lateral */
+aside li {
+    margin-bottom: 12px;
+}
+
+aside a {
+    color: #d35400;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+aside a:hover {
+    color: #ff6f00;
+}
+
+/* O "Card" do texto principal, visualmente igual à barra lateral */
+article {
+    background-color: #111111;
+    padding: 40px;
+    border: 1px solid #222222;
+    border-radius: 8px;
+}
+
+article h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+article time {
+    color: #888888;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 30px;
+}
+
+article p {
+    color: #d1d1d1;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Faz a foto sempre caber 100% dentro do card, sem vazar */
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777777;
+    text-align: right;
+    font-style: italic;
+}
+
+footer {
+    grid-area: rodape;
+    background-color: #000000;
+    color: #777777;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+}
+
+/* Se a tela do usuário tiver no mínimo 768px (Tablets, Notebooks, PCs) */
+@media (min-width: 768px) {
+    .grid-container {
+        max-width: 1200px; /* Trava o crescimento do site para ele não ficar gigante em super monitores */
+        margin: 0 auto; /* Centraliza o site no meio da tela */
+        gap: 40px; /* Espaço entre as colunas */
+        grid-template-columns: 3fr 1fr;
+        
+        /* Redesenha o mapa da página para o formato de PC */
+        grid-template-areas: 
+            "cabecalho cabecalho"
+            "conteudo lateral"
+            "rodape rodape";
+    }
+}
